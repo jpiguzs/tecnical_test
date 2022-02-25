@@ -19,6 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('phone')->nullable();
+            $table->string('carnet_id');
+            $table->date('birthday');
+            
+            //hare una validacion sencilla de roles sencilla, solo true o false ya que solo se manejaren 2 tipo de usuario 
+            $table->boolean('admin');
             $table->rememberToken();
             $table->timestamps();
         });
